@@ -166,19 +166,19 @@ class Chef
 
       def action_try_restart
         converge_by("try-restarting unit: #{new_resource.unit_name}") do
-          systemctl_execute!("try-restart", new_resource.unit_name)
+          systemctl_execute!("try-restart", new_resource.unit_name, default_env: false)
         end
       end
 
       def action_reload_or_restart
         converge_by("reload-or-restarting unit: #{new_resource.unit_name}") do
-          systemctl_execute!("reload-or-restart", new_resource.unit_name)
+          systemctl_execute!("reload-or-restart", new_resource.unit_name, default_env: false)
         end
       end
 
       def action_reload_or_try_restart
         converge_by("reload-or-try-restarting unit: #{new_resource.unit_name}") do
-          systemctl_execute!("reload-or-try-restart", new_resource.unit_name)
+          systemctl_execute!("reload-or-try-restart", new_resource.unit_name, default_env: false)
         end
       end
 
