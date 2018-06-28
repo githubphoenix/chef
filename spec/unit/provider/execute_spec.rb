@@ -35,6 +35,7 @@ describe Chef::Provider::Execute do
       log_level:    :info,
       default_env:  false,
       log_tag:      new_resource.to_s,
+      login:        true
     }
   end
 
